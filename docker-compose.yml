@@ -1,0 +1,9 @@
+version: "3"
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: notable
+      POSTGRES_PASSWORD: notable
+    ports:
+      - 5432:5432
