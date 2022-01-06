@@ -2,9 +2,9 @@
    "type": "postgres",
    "host": "localhost",
    "port": 5432,
-   "username": "notable",
-   "password": "notable",
-   "database": "notable",
+   "username": "postgres",
+   "password": "postgres",
+   "database": "postgres",
    "synchronize": true,
    "logging": false,
    "entities": [
