@@ -166,7 +166,7 @@ Send a **GET** request to the URI, "http://localhost:3000/doctors/:id/appointmen
 ```
 
 
-### Get an appointments associated with a doctor (GET)
+### Delete an appointment associated with a doctor (GET)
 Send a **DEL** request to the URI, "http://localhost:3000/doctors/:id/appointments/:appointmentId" where :id is a valid id for a doctor and :appointmentId is a valid id of an appointment. Please create a few appointments using the post request above before trying to delete the appointments. The id should be a valid doctor id and appointmentid should be of an appointment associated with the doctor
 ##### Example Request 
 ```
