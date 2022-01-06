@@ -1,10 +1,10 @@
 # notable_web_backend
 Take Home Project for Notable Health
-# Web API using NodeJS, TypeScript, TypeORM and a Postgres DB
+# Web API using NodeJS, TypeScript, TypeORM and a Postgres DB(running on Docker)
 
 Steps to run this project:
 
-1. Make sure Node.js and npm are installed
+1. Make sure Node.js, npm and docker-compose are installed
 To check if you have installed Node.js, run:
 ```
 node -v
@@ -13,11 +13,17 @@ To check if you have installed npm, run:
 ```
 npm -v
 ```
+To check if you have installed docker-compose, run:
+```
+docker-compose --version
+```
 2. clone the repository to your computer
 3. Install dependencies
 In the root folder, Run `npm i` command
 4. If you don't have a local instance of postgres running, run `docker compose up -d` to run an instance of postgres on a docker container
-5. If you do, Setup database settings inside `ormconfig.json` file
+5. If you do, Setup database settings inside `ormconfig.json` file 
+    or 
+   stop the local instance to free port 5432  and run `docker compose up -d`
 6. Run `npm start` command
 
 The app runs on "http://localhost:3000/" by default
