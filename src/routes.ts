@@ -51,4 +51,12 @@ export const Routes = [{
     controller: AppointmentController,
     action: "remove",
     validation:[]
+}, {
+    method: "put",
+    route: "/appointments/:id",
+    controller: AppointmentController,
+    action:"update",
+    validation:[
+        param('id').isInt({min:0}).withMessage('id must be a positive integer')
+    ]
 }];

@@ -114,4 +114,31 @@ export class AppointmentController {
         return appointmentToRemove;
     }
 
+    async update(request: Request, response: Response, next: NextFunction){
+        const {id} = request.params;
+        let updateObject = {};
+        if (request.body.appointmentDate){
+            updateObject["appointmentDate"] = request.body.appointmentDate;
+        }
+        const validTimes = ['00', '15', '30', '45'];
+        if(request.body.appointmentTime){
+            if (!validTimes.includes(request.body.appointmentTime.substring(3,5))) throw Error('Invalid appointment time');
+            updateObject["appointmentTime"] = request.body.appointmentTime;
+        }
+        if(request.body.appointmentType){
+            updateObject["appointmentType"] = request.body.appointmentType;
+        }
+        await this.appointmentRepository
+                  .createQueryBuilder()
+                  .update(Appointment)
+                  .set(updateObject)
+                  .where("id = :appointmentId", {appointmentId: id})
+                  .execute();
+        const updatedAppointment = Appointment.findOne(id);
+        if (!updatedAppointment) {
+            return {"message" : "No appointment with that id"}
+        };
+        return updatedAppointment;
+    }
+
 }
